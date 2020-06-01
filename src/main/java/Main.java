@@ -1,4 +1,4 @@
-import string.MostCommonWord;
+import problems.string.MostCommonWord;
 
 public class Main {
 	public static void main(String[] args) {
