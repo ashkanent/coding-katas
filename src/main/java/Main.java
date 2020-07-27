@@ -1,12 +1,14 @@
-import problems.string.MostCommonWord;
+import problems.graph.bfs.ZeroOneMatrix;
+
+import java.util.Arrays;
 
 public class Main {
 	public static void main(String[] args) {
-		MostCommonWord problem = new MostCommonWord();
-		String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.";
-		String[] bannedWords = {"hit"};
-		String answer = problem.solve(paragraph, bannedWords);
+		ZeroOneMatrix problem = new ZeroOneMatrix();
+		int[][] matrix = {{0, 0, 0}, {0, 1, 0}, {1, 1, 1}};
 
-		System.out.println(answer);
+		int[][] answer = problem.updateMatrix(matrix);
+
+		System.out.println(Arrays.deepToString(answer));
 	}
 }
