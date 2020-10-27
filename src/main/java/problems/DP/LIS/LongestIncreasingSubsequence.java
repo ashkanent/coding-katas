@@ -23,6 +23,8 @@ public class LongestIncreasingSubsequence {
 		for (int i = 1; i < nums.length; i++) {
 			int max = 0;
 			for (int j = 0; j < i; j++) {
+				// among all the 'j's that will make LIS with 'i', find
+				// the biggest dp[j]:
 				if (nums[i] > nums[j]) {
 					max = Math.max(max, dp[j]);
 				}
