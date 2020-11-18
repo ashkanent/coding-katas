@@ -77,8 +77,8 @@ public class FindAnagrams {
 		// make a map of "p" characters:
 		Map<Character, Integer> pChars = new HashMap<>();
 		for (int i = 0; i < p.length(); i++) {
-			Integer occurances = pChars.computeIfAbsent(p.charAt(i), k -> 0);
-			pChars.put(p.charAt(i), occurances + 1);
+			Integer occurrences = pChars.computeIfAbsent(p.charAt(i), k -> 0);
+			pChars.put(p.charAt(i), occurrences + 1);
 		}
 
 		for (int i = 0; i <= s.length() - p.length(); i++) {
@@ -110,7 +110,7 @@ public class FindAnagrams {
 			}
 		}
 
-		// check if all remainings are 0
+		// check if all remaining are 0
 		for (int remaining : pChars.values()) {
 			if (remaining != 0) {
 				return -2;
