@@ -12,6 +12,9 @@ public class PartitionEqualSubsetSum {
 	*
 	* Time Complexity: O(n*m)
 	* Space Complexity: O(m)
+	*
+	* you can find some good explanations here:
+	*  https://www.youtube.com/watch?v=vZtCKL_OwdA&feature=emb_title
 	* */
 	public boolean canPartition(int[] nums) {
 		int sum = 0;
