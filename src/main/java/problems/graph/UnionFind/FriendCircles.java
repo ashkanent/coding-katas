@@ -1,4 +1,4 @@
-package problems.graph.union_find;
+package problems.graph.UnionFind;
 
 import java.util.HashSet;
 import java.util.Set;
