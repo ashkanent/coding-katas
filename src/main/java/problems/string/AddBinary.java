@@ -87,4 +87,29 @@ public class AddBinary {
 		// count == 3
 		return new char[]{'1', '1'};
 	}
+
+	// approach 3 - Dec 8, 2023 - 1ms runtime (beats 100%) - 40.7MB (beats 94.61%)
+	// almost identical to solution I
+	public String addBinaryIII(String a, String b) {
+		int maxLength = Math.max(a.length(), b.length());
+		int aLenAdj = maxLength - a.length();
+		int bLenAdj = maxLength - b.length();
+		StringBuilder result = new StringBuilder();
+		char currA, currB;
+		int carryOver = 0, currentSum = 0;
+
+		for (int i = maxLength - 1; i > -1; i--) {
+			currA = (i - aLenAdj) < 0 ? '0' : a.charAt(i - aLenAdj);
+			currB = (i - bLenAdj) < 0 ? '0' : b.charAt(i - bLenAdj);
+			currentSum = carryOver + (currA - '0') + (currB - '0');
+			carryOver = currentSum > 1 ? 1 : 0;
+			result.append((currentSum % 2 == 0) ? '0' : '1');
+		}
+
+		if (carryOver > 0) {
+			result.append('1');
+		}
+
+		return result.reverse().toString();
+	}
 }
